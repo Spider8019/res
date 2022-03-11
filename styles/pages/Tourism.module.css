@@ -1,0 +1,17 @@
+.aboutContainer{
+    border:1px solid #f59e0b;
+    padding:1rem
+}
+.mainBody{
+    display:grid;
+    justify-content: space-between;
+    grid-template-columns: 0.75fr 0.25fr;
+    grid-gap:2rem;
+    align-items: flex-start;
+}
+.aboutWriterContainer{
+    display:grid;
+    grid-template-columns: auto 1fr;
+    grid-gap:1rem;
+    align-items:center;
+}

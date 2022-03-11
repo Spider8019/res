@@ -1,0 +1,21 @@
+.addPostButton{
+    box-shadow:1px 1px 10px rgba(0,0,0,0.164);
+    padding:0.5rem;
+    border-radius:0.5rem;
+    cursor:pointer;
+}
+.addPostButton>p{
+    text-align: center;
+}
+.addPostInputText{
+    width: 100%;
+}
+.addPostDialogBody{
+    display:flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+}
+.addPostDialogBody textarea{
+    width:100%;
+}

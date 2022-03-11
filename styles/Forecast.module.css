@@ -1,0 +1,29 @@
+.container{
+    position:relative;
+}
+.mainBox{
+    box-shadow:1px 1px 20px rgba(37, 37, 37, 0.185);
+    position:absolute;
+    top:100%;
+    right:0;
+    background:white;
+    border-radius:0.25rem;
+    width:30vw;
+    display:grid;
+    grid-template-columns: 0.6fr 0.4fr;
+    align-items: center;
+    transition:all 0.3s ease;
+    padding:1rem;
+    z-index:100;
+}
+.image{
+    display:block;
+}
+.text{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.text p span{
+    font-size:0.8rem;
+}

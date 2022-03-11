@@ -1,0 +1,136 @@
+.galleryRow{
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap:1rem;
+    width:90%;
+    margin:5rem auto 5rem auto;
+}
+.galleryImage{
+    position:relative;
+    width:100%; 
+    height:auto; 
+    background:var(--cooperate-theme-based-color);
+    margin:1rem 0;
+    border-radius:0.5rem;
+    overflow:hidden;
+    transition:all .3s ease;
+    box-shadow:1px 1px 10px rgba(0, 0, 0, 0.199);
+}
+.galleryImage.galleryImg{
+    width:100%;
+    background:#eee;
+}
+.imageUnsized{
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+}
+.galleryImgControls{
+    background:transparent;
+    position: absolute;
+    bottom:0;
+    width:100%;
+    background:linear-gradient(rgba(0, 0, 0, 0),rgba(0,0,0,0.6),black);
+    color:white;
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding:0.5rem;
+    opacity:0;
+    transition:all 0.3s ease;
+}
+.galleryImage:hover .galleryImgControls{
+    opacity:1;
+}
+.galleryImgButtons{
+    display:flex;
+    flex-direction: column;
+
+}
+.specContainerParent{
+    min-height:100vh;
+    display:grid;
+    place-items:center;
+}
+.specContainer{
+    width:80vw;
+    /* margin:5rem auto; */
+    background:white;
+    box-shadow:2px 2px 20px rgba(0, 0, 0, 0.363);
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    height:calc(100vh - 10rem);
+    max-height: 80vh;
+}
+.relatedGigsContaianerMain{
+    margin:5rem  0;
+    width:80vw;
+    display:grid;
+    grid-gap:2rem;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-areas: 'a0 a1 a2 a2 a3'
+                         'a4 a5 a2 a2 a6'
+                         'a7 a8 a9 a10 a11'
+                         'a12 a13 a14 a15 a15'
+                         'a16 a16 a17 a15 a15'
+                         'a16 a16 a18 a19 a20'
+                         'a21 a23 a24 a22 a25';
+    grid-template-rows: repeat(3,40vh);
+}
+.specImgContainer{
+    width:100%;
+    height:calc(100vh - 10rem);
+    position:relative !important;
+}
+.specImgContainer img{
+    display:block;
+    object-fit: cover;
+}
+.specText{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.morePostsSpec{
+    overflow-y: auto !important;
+    height:200px;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    background:#ddd;
+}
+.morePostsSpec>a{
+    height:150px;
+}
+@media only screen and (max-width:640px) {
+    .galleryRow{
+        grid-template-columns: 1fr;
+        width:95vw;
+        margin:2rem auto;
+    }
+    .specContainer{
+        width:95vw;
+        height:fit-content;
+        display:flex;
+        flex-direction: column;
+        max-height: fit-content;
+    }
+    .relatedGigsContaianerMain{
+        margin:  0 auto;
+        width:95vw;
+        grid-gap:1rem;
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: "a0 a1"
+        "a2 a3"
+        "a4 a5"
+        "a6 a7"
+        "a8 a9"
+        "a10 a11"
+        "a12 a13"
+        "a14 a15"
+        "a16 a17"
+        "a18 a19";
+    }
+}

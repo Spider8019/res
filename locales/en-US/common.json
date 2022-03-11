@@ -1,0 +1,34 @@
+{
+    "ayodhya":"Ayodhya",
+    "title":"Bhukku.",
+    "home_page_title":"District Ayodhya",
+    "page_title":{
+        "login":"Login - Ikshvaku"
+    },
+    "navbar":{
+        "home":"Home",
+        "about":"About",
+        "tourism":"Tourism",
+        "library":"Literature",
+        "talent":"Talent",
+        "gallery":"Gallery",
+        "music":"Music",
+        "festival":"Festival"
+    },
+    "home":{
+        "title":"About District",
+        "body":"Ayodhya, also known as Oudh or Awadh, is a town in northern India's Uttar Pradesh state. It is located east of Faizabad on the Ghaghara River.",
+        "timeline":{
+            "a":{"title":"Before appraise of time","body":"A massive but short-lived structure of almost 50m north–south direction was built during the early mediaeval period (11–12th century CE)."},
+            "b":{"title":"Masjid-i Janmasthan","body":"It was built by Mir Baqi, possibly a bey serving under Mughal emperor Babur, in the year 935 of the Islamic calendar (Sep 1528–Sep 1529 CE)."},
+            "c":{"title":"Demolition of the Babri Masjid","body":"On Dec 6, 1992, a group of activists from the Vishva Hindu Parishad and other organisations demolished the Babri Masjid illegally."},
+            "d":{"title":"Shri Ram Mandir Ayodhya","body":"The temple construction is being supervised by the Shri Ram Janmabhoomi Teerth Kshetra. Architect: Chandrakant Sompura"}
+        }
+    },
+    "event":{
+        "a":{
+            "title":"Holi 2022",
+            "body":"After the Mughal emperor Babur's general, Mir Baqi, attacked the complex in 1528, Holi was not celebrated in the pomp and traditional manner here. After five hundred years we will celebrate the festival of colors in the court of Ram Lalla. A new era has begun."
+        }
+    }
+}
