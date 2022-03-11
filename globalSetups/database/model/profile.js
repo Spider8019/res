@@ -58,6 +58,10 @@ const ProfileSchema = new mongoose.Schema({
     table:{
         type:Number,
         default:1,
+    },
+    profit:{
+        default:0,
+        type:Number
     }
 })
 

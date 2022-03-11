@@ -23,6 +23,20 @@ body{
     src:url('/static/fonts/signatureAmsterdam.ttf')
 
 }
+.activeLink{
+    position:Relative;
+
+}
+.activeLink::before{
+    position:absolute;
+    background:linear-gradient(45deg,#ff008c, #1900ff);
+    bottom:0;
+    width:100%;
+    left:0;
+    height:2%;
+    border-radius:0.5rem;
+    content:"";
+}
 .dark .darkLgBg{
     background:linear-gradient(45deg,#ff008c, #1900ff);
 }

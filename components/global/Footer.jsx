@@ -25,84 +25,10 @@ const contributors = [{
 }]
 const Footer = () => {
   return <div
-    className="bg-amber-500 dark:bg-black"
+    className=""
   >
-    <div className="py-8 sm:px-20 px-4 grid sm:grid-cols-6 grid-cols-2">
-      <ul className="flex flex-col">
-        <li>
-          <Link href="/gallery">
-            <a className="my-2 block">Home</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/gallery">
-            <a className="my-2 block">About</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/gallery">
-            <a className="my-2 block">Tourism</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/gallery">
-            <a className="my-2 block">Literature</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/gallery">
-            <a className="my-2 block">Talent</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/audio#player">
-            <a className="my-2 block">Music</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/gallery">
-            <a className="my-2 block">Gallery</a>
-          </Link>
-        </li>
-      </ul>
-      <ul className="flex flex-col ">
-        <li>
-          <Link href="/literature?book=The%20Ramayana&chapter=****">
-            <a className="my-2 block">The Ramayana</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="literature?book=Hanuman%20Ji&chapter=****">
-            <a className="my-2 block">Hanuman Ji</a>
-          </Link>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <Link href="/events">
-            <a className="my-2 block">Festivals</a>
-          </Link>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <Link href="/thanksto">
-            <a className="my-2 block">Thanks To</a>
-          </Link>
-        </li>
-      </ul>
-      <ul></ul>
-      <ul>
-        <li>
-          <Link href="#">
-            <a className="my-2 block font-semibold">References</a>
-          </Link>
-        </li>
-      </ul>
-    </div>
-    <div className="bg-amber-400 py-8 sm:px-20 px-4 border-t  
-      dark:bg-black
-    dark:border-amber-800
+
+    <div className="dark:bg-black py-8 sm:px-20 px-4  
       flex
       flex-col-reverse
       sm:flex-row
@@ -110,7 +36,7 @@ const Footer = () => {
       <div>
         <div>
           <p>Ayodhya</p>
-          <h1 className='text-4xl'>Ikshvaku</h1>
+          <h1 className='text-4xl font-semibold'>Bhukku.</h1>
         </div>
         <div className="mt-4">
           <p className='text-xs'>© 2006–2022 Ikshvaku & Spider8019, Inc. All rights reserved.</p>

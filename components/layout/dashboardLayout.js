@@ -13,13 +13,16 @@ import useSWR from 'swr';
 import {isMobile,BrowserView,MobileView} from "react-device-detect"
 import { getProfileDetails } from '../../globalSetups/api';
 import FilterVintageIcon from '@mui/icons-material/FilterVintage';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import RestaurantIcon from '@mui/icons-material/Restaurant';
+import TableRestaurantIcon from '@mui/icons-material/TableRestaurant';
 
 const Index = ({children}) => {
 
     
   const router=useRouter()
   return <div className={`grid h-screen ${styles.parentContainer}`} style={{gridTemplateColumns:isMobile?"1fr":"300px auto"}}>
-      <div className={`${styles.sideNavContainer}`} >
+      <div className={`${styles.sideNavContainer} dark:bg-black`} >
           <div 
             className="mx-auto my-0 sm:my-8 grid sm:place-items-center"
           >
@@ -40,19 +43,24 @@ const Index = ({children}) => {
               </Link>
           </div>
           <ul className=" sm:my-4 grid grid-cols-4 sm:block">
-              <li className={`p-2 my-2 sm:pl-8 border-l-4 ${router.pathname == "/dashboard" ? " border-transparent dark:sm:border-amber-800 sm:border-amber-500":"border-transparent"}`}>
+              <li className={`p-2 my-2 sm:pl-8 border-l-4 ${router.pathname == "/dashboard" ? " border-transparent dark:sm:border-white sm:border-black":"border-transparent"}`}>
                   <Link href="/dashboard">
                       <a className="flex align-center"><HomeOutlinedIcon/><span className="hidden sm:block ml-2">Dashboard</span></a>
                   </Link>
               </li>
-              <li className={`p-2 my-2 sm:pl-8 border-l-4 ${router.pathname == "/dashboard/tabulate" ? " border-transparent dark:sm:border-amber-800 sm:border-amber-500":"border-transparent"}`}>
-                  <Link href="/dashboard/tabulate">
-                      <a className="flex align-center"><EqualizerOutlinedIcon/><span className="hidden sm:block ml-2">Tabulate</span></a>
+              <li className={`p-2 my-2 sm:pl-8 border-l-4 ${router.pathname == "/dashboard/m" ? " border-transparent dark:sm:border-white sm:border-black":"border-transparent"}`}>
+                  <Link href="/dashboard/m">
+                      <a className="flex align-center"><RestaurantIcon/><span className="hidden sm:block ml-2">Available Items</span></a>
                   </Link>
               </li>
-              <li className={`p-2 my-2 sm:pl-8 border-l-4 ${router.pathname == "/dashboard/blog" ? " border-transparent dark:sm:border-amber-800 sm:border-amber-500":"border-transparent"}`}>
-                  <Link href="/dashboard/blog">
-                      <a className="flex align-center"><HistoryEduIcon/><span className="hidden sm:block ml-2">Write Blog</span></a>
+              <li className={`p-2 my-2 sm:pl-8 border-l-4 ${router.pathname == "/dashboard/t" ? " border-transparent dark:sm:border-white sm:border-black":"border-transparent"}`}>
+                  <Link href="/dashboard/t">
+                      <a className="flex align-center"><TableRestaurantIcon/><span className="hidden sm:block ml-2">Tables</span></a>
+                  </Link>
+              </li>
+              <li className={`p-2 my-2 sm:pl-8 border-l-4 ${router.pathname == "/dashboard/o" ? " border-transparent dark:sm:border-white sm:border-black":"border-transparent"}`}>
+                  <Link href="/dashboard/o">
+                      <a className="flex align-center"><StarBorderIcon/><span className="hidden sm:block ml-2">Orders</span></a>
                   </Link>
               </li>
               <li className={`p-2 my-2 sm:pl-8 border-l-4 border-transparent`}>
@@ -65,7 +73,7 @@ const Index = ({children}) => {
           </ul>
 
       </div>
-      <div className={isMobile?'m-0':'m-4'}>
+      <div>
            {children}
       </div>
   </div>;

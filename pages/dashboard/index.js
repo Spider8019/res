@@ -150,16 +150,20 @@ return <>
                     <span className='mr-2 basicButton rounded'>{profile.email}</span>
                     <span className='mr-2 basicButton rounded'>{profile.phoneNumber}</span>         
                 </div>
+                <div className="mx-4 my-20">
+                    <span className='mr-2 basicButton rounded'>{profile.aHolder}</span>
+                    <span className='mr-2 basicButton rounded'>{profile.aNumber}</span>         
+                    <span className='mr-2 basicButton rounded'>{profile.aIFSC}</span>         
+
+                </div>
+
             </div>
-            <div className='dark:bg-black h-full bg-slate-50 text-black dark:text-white'>
-                <div className="mx-4 my-8" >
-                    <p className='text-xl mb-4 sm:mt-0 mt-8 '>Payment Details</p>
+            <div className='dark:bg-black h-full grid place-items-center bg-slate-50 text-black dark:text-white'>
+                <div className="text-center" >
+                    <p className='text-white font-semibold text-8xl'>{profile.profit}</p>
+                    <p className='text-xl mb-4 sm:mt-0 mt-8 '>Your Earnings</p>
                 </div>
-                <div className="mx-4 text-sm">
-                    <p className='mr-2 text-2xl my-4 rounded'>{profile.aHolder}</p>
-                    <p className='mr-2 text-2xl my-4 rounded'>{profile.aNumber}</p>         
-                    <p className='mr-2 text-2xl my-4 rounded'>{profile.aIFSC}</p>         
-                </div>
+
             </div>
          </div>
       </div>
