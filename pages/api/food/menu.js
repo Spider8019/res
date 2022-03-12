@@ -10,12 +10,10 @@ mongoose.connect(process.env.MONGOOSE_MONGODB_URI)
 async function handler(req, res) {
     switch(req.method){
         case 'GET':
-                console.log(req.query)
                 const table=await Profile.findOne({email:req.query.email},'table email')
                 res.status(200).json(table)
                 break;
         case 'PUT':
-                console.log(req.body)
                 let payload={
                     id:req.body.selectedId,
                     price:req.body.price,

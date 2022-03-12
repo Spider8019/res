@@ -9,13 +9,20 @@ mongoose.connect(process.env.MONGOOSE_MONGODB_URI)
 
 async function handler(req, res) {
     switch(req.method){
+        case 'GET':
+                const order50=await Orders.find({fromRestaurant:req.query.email}).limit(50).sort({timeOfOrder: -1})
+                res.status(200).json(order50)
+                break;
         case 'POST':
-                console.log(req.body)
                 const payload=new Orders({
                     ...req.body
                 })
                 const order=await payload.save()
                 res.status(200).json(order)
+                break;
+        case 'PUT':
+                const ustatus=await Orders.findOneAndUpdate({uuid:req.body.uuid},{status:req.body.newStatus})
+                res.status(200).json(ustatus)
                 break;
         default:
                 res.status(400).json({ success: false })

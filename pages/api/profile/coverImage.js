@@ -11,7 +11,6 @@ async function handler(req, res) {
         case 'PUT':
                 // for editing name and about of profile
                 const det=await Profile.updateOne({email:req.body.email},{coverImage:req.body.coverImage})
-                console.log(det)
                 res.status(200).json({msg:"Update your cover Image successfully"})
                 break;
         default:

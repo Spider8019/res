@@ -9,10 +9,6 @@ import { useSession,signIn } from "next-auth/react"
 import { Avatar,IconButton } from '@mui/material'
 import { defaultOptions } from '../../globalSetups/availableArrays'
 import {  isMobile,isBrowser } from 'react-device-detect';
-import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import Divider from '@mui/material/Divider';
-import MenuIcon from '@mui/icons-material/Menu';
-import styles from "../../styles/pages/Home.module.css"
 import {motion} from "framer-motion"
 import LightModeIcon from '@mui/icons-material/LightMode';
 import { useTheme } from 'next-themes'
@@ -32,17 +28,6 @@ const Navbar = () => {
       right: false,
     });
   
-    const toggleDrawer = (anchor, open) => (event) => {
-      if (
-        event &&
-        event.type === 'keydown' &&
-        (event.key === 'Tab' || event.key === 'Shift')
-      ) {
-        return;
-      }
-  
-      setState({ ...state, [anchor]: open });
-    };
   
     const list = () => (
       <ul 
@@ -50,17 +35,17 @@ const Navbar = () => {
       >
           <li className={router.pathname == "/" ? "activeLink" : ""}>
           <Link href="/">
-            <a className='py-2 px-2 block mx-4 '>{t('common:navbar.home')}</a>
+            <a className='py-2 px-2 block mx-4 dark:text-white text-black '>{t('common:navbar.home')}</a>
           </Link>
           </li>
-          <li className={router.pathname == "/about" ? "activeLink" : ""}>
-          <Link href="/about">
-            <a className='py-2 px-2 block mx-4 '>{t('common:navbar.about')}</a>
+          <li className={router.pathname == "/r" ? "activeLink" : ""}>
+          <Link href="/r">
+            <a className='py-2 px-2 block mx-4 dark:text-white text-black '>Resturants</a>
           </Link>
           </li>
           <li className={router.pathname.includes("/tos") ? "activeLink" : ""}>
           <Link href="/tos">
-            <a className='py-2 px-2 block mx-4 '>Status</a>
+            <a className='py-2 px-2 block mx-4 dark:text-white text-black '>Status</a>
           </Link>
           </li>
 
@@ -73,7 +58,7 @@ const Navbar = () => {
 
     if(isBrowser){
         return (  
-            <div className=' dark:bg-black'>
+            <div className=' dark:bg-black shadow-lg'>
                 <div className="sm:px-10 sm:py-4 grid grid-cols-3 justify-between  items-center">
                     <div className='flex items-center'>
                       <h1 className="sm:text-4xl sm:ml-2 font-semibold">{t('common:title')}</h1>
@@ -95,7 +80,7 @@ const Navbar = () => {
                         &&
                           <button 
                             aria-label="internationalizationButton"
-                            className='basicDarkButton' 
+                            className='basicDarkButton dark:text-black' 
                             style={{marginLeft:"1rem"}}
                             onClick={()=>signIn(null,{ callbackUrl: `${defaultOptions.baseUrl}/dashboard`})}
                           >Login</button>

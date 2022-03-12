@@ -13,8 +13,7 @@ async function handler(req, res) {
                 res.status(200).json(profile)
                 break;
         case 'PUT':
-                // for editing name and about of profile
-                await Profile.updateOne({email:req.body.email},{name:req.body.name,about:req.body.about})
+                const uAmount=await Profile.findOneAndUpdate({email:req.body.email},{$inc:{profit:req.body.amountPayed}})
                 res.status(200).json({msg:"Update your profile successfully"})
                 break;
         default:

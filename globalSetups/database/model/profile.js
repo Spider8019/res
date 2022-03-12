@@ -37,17 +37,11 @@ const ProfileSchema = new mongoose.Schema({
     phoneNumber:{
         type:String,
     },
-    aHolder:{
+    razorPayKey:{
         type:String,
-        required:true,
     },
-    aNumber:{
+    razorPaySecret:{
         type:String,
-        required:true,
-    },
-    aIFSC:{
-        type:String,
-        required:true,
     },
     menuItems:[{
         price:{type:Number},

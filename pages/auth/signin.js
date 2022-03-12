@@ -55,7 +55,7 @@ export default function Login ({csrfToken}){
         <link rel="icon" href="/static/withOutBgLogo.png" />
       </Head>
       {/* Signin functionality */}
-      <div className={` rounded-xl ${styles.loginMain} grid grid-cols-1 sm:grid-cols-2 `}>
+      <div className={` rounded-xl ${styles.loginMain} grid grid-cols-1 sm:grid-cols-2 dark:text-black`}>
         <div className='grid place-items-center'>
            <div className=" sm:w-2/3">
              <center>
@@ -92,12 +92,12 @@ export default function Login ({csrfToken}){
                         />
                       <button 
                         style={{height:"calc(100% - 1rem)"}}
-                        className='absolute top-0 right-0 px-2 mt-2 mb-2 mr-2'
+                        className='absolute top-0 right-0 px-2 mt-2 mb-2 mr-2 '
                         onClick={handleTogglePasswordVisibility}>
                           {passwordShow ? <MoreHorizIcon/> : <AbcIcon/>}
                       </button>
                     </div>
-                    <button className="block basicDarkButton m-2 mt-8 p-2 py-2"
+                    <button className="block basicDarkButton m-2 mt-8 p-2 py-2 dark:bg-black"
                       style={{width:"calc(100% - 1rem)"}}
                     >
                       Login   
@@ -106,12 +106,6 @@ export default function Login ({csrfToken}){
                 {/* <div className='relative h-px w-1/2 bg-slate-300 mt-8'>
                     <p className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white px-2 text-xs'>or</p>
                 </div> */}
-                <span className="text-xs mt-12 block text-slate-500">Don&apos;t have an account?</span>
-                <Link href="/sam9">
-                  <a className="text-xs text-amber-500 ml-2" >
-                    Create Here
-                  </a>
-                </Link>
                 {/* <div className={`${styles.providerLoginsContainer} mt-4`}>
                     { !_.isNull(Object.values(providers)) && Object.values(providers).map((provider) => (
                       provider.id!=='credentials' 

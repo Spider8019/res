@@ -3,6 +3,7 @@ import { Avatar, Tooltip, tooltipClasses } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router'
 
 
 const BootstrapTooltip = styled(({ className, ...props }) => (
@@ -24,11 +25,16 @@ const contributors = [{
   url: "contributor2.jfif"
 }]
 const Footer = () => {
+
+  const router=useRouter()
+  if (["/dashboard","/dashboard/t","/dashboard/m","/dashboard/o"].includes(router.pathname))
+  return null;
+
   return <div
     className=""
   >
 
-    <div className="dark:bg-black py-8 sm:px-20 px-4  
+    <div className="bg-gray-200 dark:bg-black py-8 sm:px-20 px-4  
       flex
       flex-col-reverse
       sm:flex-row

@@ -35,7 +35,6 @@ export const deleteObject = async({url},callback) =>{
         Bucket:"ikshvaku-s3",
         Key:url.slice(48,)
     }
-    console.log(params)
     await myBucket.deleteObject(params)
     .send((err,data) => {
         callback(err,data)

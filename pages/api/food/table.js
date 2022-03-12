@@ -10,7 +10,6 @@ mongoose.connect(process.env.MONGOOSE_MONGODB_URI)
 async function handler(req, res) {
     switch(req.method){
         case 'PUT':
-                console.log(req.body)
                 const itemInsertion=await Profile.findOneAndUpdate({email:req.body.email},{$inc:{"table":req.body.by}},{  safe: true, upsert: true})
                 res.status(200).json({msg:"Item added successfully"})
                 break;

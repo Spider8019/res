@@ -10,12 +10,10 @@ mongoose.connect(process.env.MONGOOSE_MONGODB_URI)
 async function handler(req, res) {
     switch(req.method){
         case 'GET':
-                console.log("a;dokjfa;lk")
                 const det=await Foods.find()
                 res.status(200).json({det})
                 break;
         case 'PUT':
-                console.log(req.body)
                 let payload={
                     id:req.body.selectedId,
                     price:req.body.inputPrice

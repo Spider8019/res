@@ -27,6 +27,10 @@ body{
     position:Relative;
 
 }
+.bgLG{
+    background:linear-gradient(45deg,#ff008c, #1900ff);
+
+}
 .activeLink::before{
     position:absolute;
     background:linear-gradient(45deg,#ff008c, #1900ff);
@@ -96,16 +100,6 @@ table, th, td {
     background:#eee;
     padding:0.5rem;
 }
-.playerLeftContainer{
-    background-size:contain !important;
-    background:url('../public/static/pages/player.png') no-repeat left;
-}
-@media only screen and (max-width:640px) {
-    .playerLeftContainer{
-        height:40vh;
-        background:linear-gradient(#f59e0b ,red);
-        background-position: center;
-    }
-}
+
 /* // Styling the default Slick dots */
 

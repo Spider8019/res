@@ -1,7 +1,7 @@
 import React,{useState,useRef,useLayoutEffect, useEffect} from 'react';
 import DashboardLayout from "../../components/layout/dashboardLayout"
 import styles from "../../styles/pages/Dashboard.module.css"
-import galStyles from "../../styles/Gallery.module.css"
+import homeStyles from "../../styles/pages/Home.module.css"
 import { getProfileDetails,getPostsOfProfile,updateProfileImage,deletePost } from '../../globalSetups/api';
 import { getSession,useSession } from 'next-auth/react';
 import VerifiedIcon from '@mui/icons-material/Verified';
@@ -77,7 +77,11 @@ const Dashboard = ({user,msg}) => {
         }
     })
   }
-return <>
+return <motion.div
+    initial={{opacity:0}}
+    animate={{opacity:1,transition:{duration:1}}}
+    exit={{opacity:0}}
+>
       <Head>
           <title>
               Dashboard
@@ -142,25 +146,18 @@ return <>
          <div className="grid grid-cols-2"
             style={{height:"50vh"}}
          >
-            <div className='border-r border-white'>
-                <div className="mx-4 my-8" >
-                    <p className='text-xl mb-4 '>Contact Details</p>
-                </div>
+            <div className='border-r border-white grid place-items-center'>
                 <div className="mx-4 text-sm">
-                    <span className='mr-2 basicButton rounded'>{profile.email}</span>
-                    <span className='mr-2 basicButton rounded'>{profile.phoneNumber}</span>         
-                </div>
-                <div className="mx-4 my-20">
-                    <span className='mr-2 basicButton rounded'>{profile.aHolder}</span>
-                    <span className='mr-2 basicButton rounded'>{profile.aNumber}</span>         
-                    <span className='mr-2 basicButton rounded'>{profile.aIFSC}</span>         
-
+                    <span className='block my-2 basicButton rounded'>{profile.email}</span>
+                    <span className='block my-2 basicButton rounded'>{profile.phoneNumber}</span>         
+                    <span className='block my-2 basicButton rounded'>{profile.razorPayKey}</span>
+                    <span className='block my-2 basicButton rounded'>{profile.razorPaySecret}</span>         
                 </div>
 
             </div>
             <div className='dark:bg-black h-full grid place-items-center bg-slate-50 text-black dark:text-white'>
                 <div className="text-center" >
-                    <p className='text-white font-semibold text-8xl'>{profile.profit}</p>
+                    <p className={`text-white font-semibold text-6xl ${homeStyles.gradientText}`}>₹{profile.profit/100}</p>
                     <p className='text-xl mb-4 sm:mt-0 mt-8 '>Your Earnings</p>
                 </div>
 
@@ -169,7 +166,7 @@ return <>
       </div>
 
 
-  </>;
+  </motion.div>;
 };
 
 Dashboard.Layout = DashboardLayout

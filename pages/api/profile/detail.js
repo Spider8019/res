@@ -12,7 +12,6 @@ async function handler(req, res) {
     switch(req.method){
         case 'GET':
                 const profile=await Profile.findOne({email:req.query.email})
-                console.log("adsfasdfasdfasfprofile",profile)
                 if(profile)
                         res.status(200).json(profile)
                 else

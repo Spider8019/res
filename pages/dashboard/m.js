@@ -62,7 +62,11 @@ const Tabulate = ({ user }) => {
   }
 
   return (
-    <div className='grid' style={{ height: "calc(100vh - 2rem)", gridTemplateRows: "auto 1fr auto" }}>
+    <motion.div 
+      initial={{opacity:0}}
+      animate={{opacity:1,transition:{duration:1}}}
+      exit={{opacity:0}}
+      className='grid overflow-hidden' style={{ height: "calc(100vh)", gridTemplateRows: "auto 1fr auto" }}>
       <Head>
         <title>Menus - Bhukku.</title>
       </Head>
@@ -81,7 +85,7 @@ const Tabulate = ({ user }) => {
             />
             <button 
               type="submit"
-              className="basicDarkButton text-white dark:text-black">Add</button>
+              className="basicDarkButton bg-black text-white dark:text-black">Add</button>
           </form>
         }
       </div>
@@ -113,11 +117,11 @@ const Tabulate = ({ user }) => {
               {
                 yourItems.menuItems.filter(x => x.id===item._id).length>0
                 ?
-                <motion.button whileTap={{scale:0.9}} onClick={()=>removeFromMenu(item._id,yourItems.menuItems.filter(x=>x.id===item._id)[0].price)} className="bg-black text-white dark:bg-white dark:text-black rounded mr-2 h-full">{yourItems.menuItems.filter(x=>x.id===item._id)[0].price}</motion.button>
+                <motion.button whileTap={{scale:0.9}} onClick={()=>removeFromMenu(item._id,yourItems.menuItems.filter(x=>x.id===item._id)[0].price)} className="bg-black text-white dark:text-black dark:bg-white rounded mr-2 h-full">{yourItems.menuItems.filter(x=>x.id===item._id)[0].price}</motion.button>
                 :
-                <motion.button whileTap={{scale:0.9}} onClick={()=>showAddToMenuDialog(item._id,item.title)} className="bg-transparent text-white border-2 border-white rounded mr-2 h-full">+</motion.button>
+                <motion.button whileTap={{scale:0.9}} onClick={()=>showAddToMenuDialog(item._id,item.title)} className="bg-transparent text-black dark:text-white border-2 border-black dark:border-white rounded mr-2 h-full">+</motion.button>
               }
-              <div className="grow dark:bg-black p-2 rounded grid grid-cols-5"
+              <div className="grow text-white dark:bg-black p-2 rounded grid grid-cols-5"
                 style={{background:yourItems.menuItems.filter(x => x.id===item._id).length>0?"linear-gradient(45deg,#ff008c, #1900ff)":"black"}}
                 >
                   <span>{item.title}</span> 
@@ -138,7 +142,7 @@ const Tabulate = ({ user }) => {
         }
       </div>
 
-    </div>
+    </motion.div>
 
   )
 

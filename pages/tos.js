@@ -18,9 +18,9 @@ const Tos = () => {
             value={uuid}
             onChange={e=>setUuid(e.target.value)}
             placeholder="Enter Order Id"
-            className='p-2 mb-4 rounded border-2 border-white'
+            className='p-2 mb-4 rounded border-2 dark:border-white border-black'
           />  
-          <input type="Submit" className='basicDarkButton dark:text-black'/>  
+          <input type="Submit" className='basicDarkButton shadow-lg bg-black dark:bg-black '/>  
         </form>    
     </div>
   )

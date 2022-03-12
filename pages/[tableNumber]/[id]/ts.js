@@ -13,7 +13,6 @@ const router=useRouter()
 const {tableNumber,id}=router.query
 const {data:profile,error}=useSWR("GetBasicDetail",()=>getProfileDetails({email:id}))
 const {data:tsd,error:tse}=useSWR("TableStatus",()=>tableStatus({tableNumber,id,uuid:router.query.uuid}))
-console.log(error,tse)
 if(error || tse)
     return <h1>Something went wrong</h1>
 if(!profile || !tsd)

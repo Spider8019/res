@@ -3,9 +3,7 @@ import Image from 'next/image';
 import {useRouter} from "next/router"
 import Link from 'next/link';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import EqualizerOutlinedIcon from '@mui/icons-material/EqualizerOutlined';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
 import styles from "../../styles/pages/Dashboard.module.css"
 import { signOut, useSession } from 'next-auth/react';
 import {defaultOptions} from '../../globalSetups/availableArrays'
@@ -15,13 +13,13 @@ import { getProfileDetails } from '../../globalSetups/api';
 import FilterVintageIcon from '@mui/icons-material/FilterVintage';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
-import TableRestaurantIcon from '@mui/icons-material/TableRestaurant';
+import TableRestaurantOutlinedIcon from '@mui/icons-material/TableRestaurantOutlined';
 
 const Index = ({children}) => {
 
     
   const router=useRouter()
-  return <div className={`grid h-screen ${styles.parentContainer}`} style={{gridTemplateColumns:isMobile?"1fr":"300px auto"}}>
+  return <div className={`grid ${styles.parentContainer}`} style={{gridTemplateColumns:isMobile?"1fr":"300px auto"}}>
       <div className={`${styles.sideNavContainer} dark:bg-black`} >
           <div 
             className="mx-auto my-0 sm:my-8 grid sm:place-items-center"
@@ -55,7 +53,7 @@ const Index = ({children}) => {
               </li>
               <li className={`p-2 my-2 sm:pl-8 border-l-4 ${router.pathname == "/dashboard/t" ? " border-transparent dark:sm:border-white sm:border-black":"border-transparent"}`}>
                   <Link href="/dashboard/t">
-                      <a className="flex align-center"><TableRestaurantIcon/><span className="hidden sm:block ml-2">Tables</span></a>
+                      <a className="flex align-center"><TableRestaurantOutlinedIcon/><span className="hidden sm:block ml-2">Tables</span></a>
                   </Link>
               </li>
               <li className={`p-2 my-2 sm:pl-8 border-l-4 ${router.pathname == "/dashboard/o" ? " border-transparent dark:sm:border-white sm:border-black":"border-transparent"}`}>

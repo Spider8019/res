@@ -1,10 +1,11 @@
 import React,{useState} from 'react'
 import useSWR, { mutate } from "swr";
-import { yourAllItemsClients,getProfileDetails,submitOrder } from '../../../globalSetups/api';
+import { yourAllItemsClients,getProfileDetails,submitOrder,updateYourEarning } from '../../../globalSetups/api';
 import {useRouter} from 'next/router';
 import ClientMenuItem from '../../../components/dialogs/ClientMenuItem';
 import Head from "next/head"
 import {nanoid} from "nanoid"
+import { notifyerror } from '../../../components/snackbar';
 
 const Specific = () => {
  
@@ -16,7 +17,6 @@ const Specific = () => {
   const [total,setTotal]=useState(0)
 
   const makePayment = async () => {
-    console.log("here...");
     const res = await initializeRazorpay();
 
     if (!res) {
@@ -25,12 +25,11 @@ const Specific = () => {
     }
 
     // Make API call to the serverless API
-    const data = await fetch("/api/razorpay", { method: "POST",body:JSON.stringify({price:total}) }).then((t) =>
+    const data = await fetch("/api/razorpay", { method: "POST",body:JSON.stringify({price:total,rk:profile.razorPayKey,rs:profile.razorPaySecret}) }).then((t) =>
       t.json()
     );
-    console.log(data);
     var options = {
-      key: process.env.RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
+      key: profile.razorPayKey, // Enter the Key ID generated from the Dashboard
       name: "Bhukku. Ayodhya",
       currency: data.currency,
       amount: data.amount,
@@ -41,7 +40,7 @@ const Specific = () => {
       },
     //   image: "../public/static/withOutBgLogo.png",
       handler: async function (response) {
-        console.log(orderSummary)
+
         const uuid=nanoid(5)
         const x=await submitOrder({orderSummary,
                     more:"GIVE SOME WATER",
@@ -53,11 +52,16 @@ const Specific = () => {
                     signature:response.razorpay_signature,
                     uuid:uuid})
         if(x.status===200){
-            router.push(`/${tableNumber}/${id}/ts?uuid=${uuid}`)
+            const res=await updateYourEarning({email:id,amountPayed:data.amount})
+            if(res.status===200){
+              router.push(`/${tableNumber}/${id}/ts?uuid=${uuid}`)
+            }
+            else{
+              notifyerror("Something went wrong")
+            }
         }
         else{
             alert("Money is debited but order not placed contact admin")
-            console.log(x,"order added successfylly")
         }
       },
     };
