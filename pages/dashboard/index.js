@@ -16,6 +16,7 @@ import { deleteObject,uploadObject } from '../../globalSetups/aws/s3';
 import { nanoid } from 'nanoid';
 import Head from 'next/head';
 import { editProfileCoverImage } from '../../globalSetups/api';
+import Loading from "../../components/global/Loading"
 
 const Dashboard = ({user,msg}) => {
 
@@ -36,7 +37,7 @@ const Dashboard = ({user,msg}) => {
     }
   if(!profile){
       return (
-        <p>loading</p>
+        <Loading/>
         )
     }
 

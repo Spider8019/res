@@ -34,7 +34,7 @@ const ClientMenuItem = ({total,setTotal,orderSummary,setOrderSummary,price="Pric
   return (
     <div    
         style={{background:category!="Category"?"linear-gradient(45deg,#ff008c, #1900ff)":"transparent"}} 
-        className="text-white grid grid-cols-7 items-center gap-2 p-2 rounded my-2">
+        className={`${category==="Category"?"dark:text-white text-black":"text-white  "} grid grid-cols-7 items-center gap-2 p-2 rounded my-2`}>
         <p>{title}</p>   
         <p>{price}</p>
         <p className={category==="Category"?"":"text-xs"}>{about.slice(0,25)}</p> 
